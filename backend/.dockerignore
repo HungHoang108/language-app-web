@@ -1,0 +1,13 @@
+bin
+obj
+**/bin
+**/obj
+.vs
+.vscode
+node_modules
+*.user
+*.suo
+*.log
+.git
+.gitignore
+Dockerfile
