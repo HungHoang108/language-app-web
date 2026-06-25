@@ -283,3 +283,4 @@ C:\Users\Nollaus\OneDrive\Desktop\language-web-app\backend\bin\Debug\net10.0\run
 C:\Users\Nollaus\OneDrive\Desktop\language-web-app\backend\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Nollaus\OneDrive\Desktop\language-web-app\backend\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Nollaus\OneDrive\Desktop\language-web-app\backend\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Nollaus\OneDrive\Desktop\language-web-app\backend\obj\Debug\net10.0\backend.sourcelink.json
