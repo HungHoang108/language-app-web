@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    # Do not bind-mount the host source over the container app folder
+    # volumes:
+    #   - ./backend:/app
+    # environment:
+    #   - DATABASE_URL=postgresql://user:password@db:5432/mydatabase
+    # depends_on:
+    #   - db
