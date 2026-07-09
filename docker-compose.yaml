@@ -1,4 +1,21 @@
+version: "3.8"
+
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - MSSQL_SA_PASSWORD=Your_password123!
+      - ACCEPT_EULA=Y
+    ports:
+      - "1434:1433"
+    healthcheck:
+      test: ["CMD-SHELL", '/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "Your_password123!" -C -Q ''SELECT 1'' || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
   backend:
     build:
       context: ./backend
@@ -6,10 +23,9 @@ services:
     container_name: backend
     ports:
       - "8080:8080"
-    # Do not bind-mount the host source over the container app folder
-    # volumes:
-    #   - ./backend:/app
-    # environment:
-    #   - DATABASE_URL=postgresql://user:password@db:5432/mydatabase
-    # depends_on:
-    #   - db
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MyDatabase;User Id=sa;Password=Your_password123!;TrustServerCertificate=True;
+    depends_on:
+      sqlserver:
+        condition: service_healthy

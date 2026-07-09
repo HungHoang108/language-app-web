@@ -1,0 +1,14 @@
+# Ignore ASP.NET Core configuration files with secrets
+backend/appsettings.json
+backend/appsettings.Development.json
+
+# Ignore build outputs
+backend/bin/
+backend/obj/
+
+# Ignore Docker generated files
+docker-compose.override.yml
+
+# Ignore user-specific files
+*.user
+*.suo
