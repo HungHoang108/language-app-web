@@ -95,6 +95,7 @@ namespace backend.Controllers
 
             _context.TodoItems.Remove(todoItem);
             await _context.SaveChangesAsync();
+            var test = "hello";
 
             return NoContent();
         }
